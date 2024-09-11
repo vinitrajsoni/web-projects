@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <input type="text" id="register-username" placeholder="Enter username">
+        <input type="password" id="register-password" placeholder="Enter password">
+        <button onclick="register()">Register</button>
+        <p id="register-message"></p>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+
+    <script>
+        function register() {
+            const username = document.getElementById("register-username").value;
+            const password = document.getElementById("register-password").value;
+
+            if (username === "" || password === "") {
+                document.getElementById("register-message").textContent = "Both fields are required!";
+                return;
+            }
+
+            if (localStorage.getItem(username)) {
+                document.getElementById("register-message").textContent = "Username already exists!";
+            } else {
+                localStorage.setItem(username, password);
+                document.getElementById("register-message").textContent = "Registration successful!";
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);  // Redirect to login page after 1 second
+            }
+        }
+    </script>
+</body>
+</html>

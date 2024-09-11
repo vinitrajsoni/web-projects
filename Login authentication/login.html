@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Enter username">
+        <input type="password" id="login-password" placeholder="Enter password">
+        <button onclick="login()">Login</button>
+        <p id="login-message"></p>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById("login-username").value;
+            const password = document.getElementById("login-password").value;
+
+            if (username === "" || password === "") {
+                document.getElementById("login-message").textContent = "Both fields are required!";
+                return;
+            }
+
+            const storedPassword = localStorage.getItem(username);
+            if (storedPassword && storedPassword === password) {
+                document.getElementById("login-message").textContent = "Login successful!";
+                localStorage.setItem("currentUser", username);
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1000);  // Redirect to dashboard after 1 second
+            } else {
+                document.getElementById("login-message").textContent = "Invalid username or password!";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome, <span id="user-name"></span>!</h2>
+        <div class="decoration">
+            <div class="balloons">
+                <div class="balloon" style="background-color: #FF5733;"></div>
+                <div class="balloon" style="background-color: #33FF57;"></div>
+                <div class="balloon" style="background-color: #3357FF;"></div>
+                <div class="balloon" style="background-color: #F3FF33;"></div>
+                <div class="balloon" style="background-color: #FF33D4;"></div>
+            </div>
+            <div class="celebrate-message">Let's Celebrate!</div>
+        </div>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Display the logged-in user's name (retrieved from localStorage)
+        const currentUser = localStorage.getItem("currentUser");
+        if (currentUser) {
+            document.getElementById("user-name").textContent = currentUser;
+        } else {
+            window.location.href = 'login.html';  // Redirect to login page if not logged in
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem("currentUser");
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.header-section {
+    background-color: black;
+    padding: 50px 20px;
+}
+
+.header-section h1 {
+    font-size: 2.5rem;
+}
+
+.header-section p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.play-button {
+    font-size: 4rem;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.quote-section {
+    background-color: white;
+    color: black;
+    padding: 50px 20px;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.image-section {
+    margin: 20px 0;
+}
+
+.image-section img {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.biography-section {
+    background-color: black;
+    padding: 50px 20px;
+}
+
+.biography-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.biography-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: left;
+    color: #ddd;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: black;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+footer span {
+    color: #f34f4f;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
